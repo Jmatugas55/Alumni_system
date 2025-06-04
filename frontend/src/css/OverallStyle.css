@@ -1,0 +1,2129 @@
+/* Reset margin, padding, box-sizing for full coverage and predictable sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;    /* use min-height so body can grow */
+  width: 100%;
+  overflow-x: hidden;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #fff;
+}
+
+/* Container for the whole landing page */
+.landing-container {
+  font-family: inherit;
+  color: #4a3f55;
+  background: linear-gradient(135deg, #ffe6f0, #fff0f5);
+  min-height: 100vh;         /* use min-height instead of fixed height */
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2rem;
+  background-size: cover;
+  background-position: center;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+/* Hero section */
+.hero {
+  text-align: center;
+  background: #fce4ec;
+  padding: 2rem 1.5rem;   /* reduced padding to avoid oversized on small */
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(255, 192, 203, 0.3);
+  margin-bottom: 2rem;    /* slightly less margin */
+  color: #a83279;
+  width: 100%;  
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 5vw, 3rem); /* responsive font sizing */
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-shadow: 1px 1px 3px #f8bbd0;
+}
+
+.hero p {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  color: #7d4a70;
+}
+
+/* Call-to-action buttons container */
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;   /* reduced gap for better spacing */
+  flex-wrap: wrap;
+}
+
+/* Button base styles */
+.btn {
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 0.75rem 1.8rem;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(219, 112, 147, 0.3);
+  user-select: none;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+/* Outline style buttons */
+.btn-outline {
+  color: #a83279;
+  border: 2.5px solid #a83279;
+  background: transparent;
+}
+
+.btn-outline:hover {
+  background: #a83279;
+  color: white;
+  box-shadow: 0 6px 12px rgba(168, 50, 121, 0.6);
+  transform: translateY(-3px);
+}
+
+/* About section */
+.about {
+  background: #fff0f5;
+  border-radius: 20px;
+  padding: 2rem 1.5rem;  /* slightly smaller padding */
+  box-shadow: 0 8px 16px rgba(219, 112, 147, 0.15);
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 2rem;
+  color: #843c6d;
+}
+
+.about h2 {
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
+  margin-bottom: 1rem;
+  font-weight: 700;
+  text-shadow: 1px 1px 2px #f8bbd0;
+}
+
+.about p {
+  font-size: clamp(1rem, 1.5vw, 1.15rem);
+  line-height: 1.6;
+  font-weight: 500;
+  color: #7b3a69;
+}
+
+/* Footer styles */
+.footer {
+  text-align: center;
+  padding: 1.5rem 1rem;
+  font-size: 0.9rem;
+  color: #a875a1;
+  font-style: italic;
+  border-top: 1px solid #f8bbd0;
+  max-width: 100vw;
+  box-sizing: border-box;
+}
+
+/* Login and Signup Styles */
+
+/* Background with subtle pink blush gradient */
+.login-bg {
+  min-height: 100vh;      /* changed to min-height */
+  width: 100vw;
+  background: linear-gradient(120deg, #ffe7f0 0%, #fff7fa 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 1rem;    /* reduced padding */
+  box-sizing: border-box;
+  font-family: inherit;
+  overflow-y: auto;      /* allow vertical scroll if needed */
+}
+
+/* Container with soft card style */
+.login-container {
+  background: #fff0f6;
+  border-radius: 20px;
+  padding: 2.5rem 2.5rem;   /* reduced padding */
+  max-width: 380px;
+  width: 100%;
+  box-shadow: 0 8px 20px rgba(230, 130, 180, 0.3);
+  text-align: center;
+  transition: box-shadow 0.3s ease;
+  border: 1px solid #f3c7d6;
+  overflow-y: auto;
+  max-height: 90vh;       /* limit height, scroll if too tall */
+}
+
+.login-container:hover {
+  box-shadow: 0 12px 35px rgba(230, 130, 180, 0.5);
+}
+
+/* Header image styling */
+.login-header {
+  margin-bottom: 1.5rem;
+}
+
+.login-logo {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 5px 15px rgba(230, 130, 180, 0.5);
+  margin-bottom: 1rem;
+  transition: box-shadow 0.3s ease;
+}
+
+.login-logo:hover {
+  box-shadow: 0 8px 25px rgba(230, 130, 180, 0.7);
+}
+
+/* Title with normal font */
+.login-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #d14b7a;
+  margin: 0 0 1.5rem 0;
+}
+
+/* Form layout */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Input fields */
+.login-input {
+  padding: 0.7rem 1.2rem;
+  font-size: 1rem;
+  border-radius: 12px;
+  border: 2px solid #e89ab7;
+  outline: none;
+  background: #ffeaf3;
+  color: #70294c;
+  font-weight: 500;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  font-family: inherit;
+}
+
+.login-input::placeholder {
+  color: #d89cb4;
+  font-style: normal;
+}
+
+.login-input:focus {
+  border-color: #d14b7a;
+  box-shadow: 0 0 8px #d14b7a;
+}
+
+/* Button with rounded pill shape */
+.login-btn {
+  background-color: #d14b7a;
+  color: white;
+  font-weight: 700;
+  font-size: 1.1rem;
+  padding: 0.75rem 0;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  box-shadow: 0 6px 14px rgba(209, 75, 122, 0.5);
+  transition: background-color 0.3s ease, transform 0.25s ease;
+  font-family: inherit;
+}
+
+.login-btn:hover {
+  background-color: #b83e6f;
+  transform: translateY(-2px);
+}
+
+/* Register link */
+.login-container > a {
+  display: block;
+  margin-top: 1.5rem;
+  color: #d14b7a;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.login-container > a:hover {
+  color: #b83e6f;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* Register form background */
+.reg-bg {
+  min-height: 100vh;        /* changed from height 120% */
+  width: 100vw;
+   background: linear-gradient(120deg, #ffe7f0 0%, #fff7fa 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 1rem;
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+/* Card container */
+.reg-container {
+  background: #ffffffee;
+  border-radius: 22px;
+  padding: 2.5rem 3rem;  /* reduced padding */
+  max-width: 420px;
+  width: 100%;
+  box-shadow: 0 12px 25px rgba(168, 237, 234, 0.45);
+  text-align: center;
+  transition: box-shadow 0.4s ease;
+  max-height: 90vh;     /* limit height, allow scroll inside */
+  overflow-y: auto;
+}
+
+.reg-container:hover {
+  box-shadow: 0 18px 40px rgba(168, 237, 234, 0.7);
+}
+
+/* Logo image */
+.reg-logo {
+  width: 80px;
+  height: 80px;
+  border-radius: 15px;
+  object-fit: cover;
+  box-shadow: 0 6px 20px rgba(254, 214, 227, 0.5);
+  margin-bottom: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.reg-logo:hover {
+  transform: scale(1.05);
+}
+
+/* Title style */
+.reg-title {
+  font-size: 2rem;
+  color: #5d8aa8;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+/* Form style */
+.reg-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Input fields */
+.reg-input {
+  padding: 0.75rem 1.2rem;
+  font-size: 1.05rem;
+  border-radius: 14px;
+  border: 2.5px solid #c5d3dd;
+  outline: none;
+  background: #f7fbff;
+  color: #4a6e85;
+  font-weight: 600;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  font-family: 'Poppins', sans-serif;
+}
+
+.reg-input::placeholder {
+  color: #9bb9d6;
+  font-style: italic;
+  font-weight: 400;
+}
+
+.reg-input:focus {
+  border-color: #5d8aa8;
+  box-shadow: 0 0 10px #5d8aa8;
+}
+
+.reg-select {
+  padding: 0.8rem 1rem;
+  font-size: 1.05rem;
+  border-radius: 14px;
+  border: 2px solid #9ac1c8;
+  background: #f6fafd;
+  color: #3a5059;
+  font-weight: 500;
+  font-family: 'Poppins', sans-serif;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.reg-select:focus {
+  border-color: #5d8aa8;
+  box-shadow: 0 0 10px #5d8aa8aa;
+}
+
+/* Register button */
+.reg-btn {
+  background-color: #5d8aa8;
+  color: #e0f0ff;
+  font-weight: 700;
+  font-size: 1.2rem;
+  padding: 0.8rem 0;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 7px 18px rgba(93, 138, 168, 0.6);
+  transition: background-color 0.3s ease, transform 0.25s ease;
+  font-family: 'Poppins', sans-serif;
+}
+
+.reg-btn:hover {
+  background-color: #4b7090;
+  transform: translateY(-2px);
+}
+
+/* Link for redirecting */
+.reg-container > a {
+  display: block;
+  margin-top: 1.7rem;
+  color: #5d8aa8;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.reg-container > a:hover {
+  color: #4b7090;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 480px) {
+  .landing-container,
+  .login-bg,
+  .reg-bg {
+    padding: 1.2rem 0.8rem;
+  }
+
+  .hero,
+  .about,
+  .login-container,
+  .reg-container {
+    max-width: 90vw;
+    padding: 1.5rem 1.5rem;
+  }
+
+  .btn {
+    font-size: 1rem;
+    padding: 0.6rem 1.4rem;
+  }
+
+  .login-logo,
+  .reg-logo {
+    width: 70px;
+    height: 70px;
+  }
+}
+
+
+/****************************  user dashboard styles  ****************************/
+/* Layout */
+.user_dashboard_layout {
+  display: flex;
+  height: 100vh; /* Changed from min-height */
+  width: 100%;
+  background: #fff5f8;
+  font-family: 'Segoe UI', sans-serif;
+  overflow: hidden;
+}
+
+/* Sidebar */
+.user_dashboard_sidebar {
+  width: 250px;
+  background: linear-gradient(135deg, #ff9eb3, #ffd3dc);
+  color: white;
+  padding: 2rem 1rem;
+  border-top-right-radius: 20px;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  flex-shrink: 0;
+  overflow-y: auto;
+}
+
+.user_dashboard_main {
+  flex: 1;
+  height: 100vh;
+  /* Remove width: 200% to prevent horizontal scroll */
+  width: 100%;
+  
+  /* Make this a flex column container so events_box can grow */
+  display: flex;
+  flex-direction: column;
+  
+  padding: 2rem;
+  overflow-y: auto;
+}
+/* Remaining styles unchanged */
+.user_dashboard_title {
+  text-align: center;
+  font-size: 1.6rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+.user_dashboard_profile_info {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.user_dashboard_initials {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 10px;
+  background-color: #fff;
+  color: #ff7a98;
+  font-weight: bold;
+  font-size: 1.4rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.user_dashboard_name {
+  display: block;
+  font-size: 1rem;
+  color: white;
+  font-weight: bold;
+}
+
+.user_dashboard_nav {
+  list-style: none;
+  padding: 0;
+}
+
+.user_dashboard_nav li {
+  margin: 1rem 0;
+}
+
+.user_dashboard_nav li a {
+  text-decoration: none;
+  color: rgb(75, 21, 21);
+  font-weight: 500;
+  padding: 8px 12px;
+  display: block;
+  border-radius: 8px;
+  transition: background 0.3s;
+}
+
+.user_dashboard_nav li.active a,
+.user_dashboard_nav li a:hover {
+  background: #ffffff55;
+}
+
+.user_dashboard_main h1 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #ff5e80;
+}
+
+.user_dashboard_profile_card {
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  border-left: 5px solid #ff7a98;
+}
+
+.user_dashboard_sections {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.user_dashboard_box {
+  flex: 1;
+  min-width: 300px;
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  border-top: 4px solid #ffc4d6;
+}
+
+.user_dashboard_box h2 {
+  color: #ff7a98;
+  margin-bottom: 1rem;
+}
+
+.user_dashboard_list {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1rem;
+}
+
+.user_dashboard_list li {
+  padding: 0.5rem 0;
+  border-bottom: 1px dashed #eee;
+}
+
+.user_dashboard_box a {
+  display: inline-block;
+  margin-top: 1rem;
+  color: #ff5e80;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+
+.user_dashboard_box a:hover {
+  text-decoration: underline;
+}
+
+.logout-button {
+  background-color: #d9534f; /* Bootstrap red */
+  border: none;
+  color: white;
+  padding: 8px 18px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+  width: 100%; /* make button fill the li */
+  text-align: left;
+}
+/* Container for Alumni & Companies side-by-side */
+.user_dashboard_row {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: nowrap;
+  width: 100%;
+  margin-bottom: 2rem; /* space below this row */
+}
+
+/* Alumni and Companies should each take 50% (or adjust as needed) */
+.alumni_box,
+.companies_box {
+  flex: 1 1 50%;
+  min-width: 300px;
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  border-top: 4px solid #ffc4d6;
+  display: flex;
+  flex-direction: column;
+  max-height: 75vh; /* optionally limit height for scroll */
+  overflow-y: auto;
+}
+
+.events_box {
+  width: 140%; /* This is key */
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  border-top: 4px solid #ffc4d6;
+  height: 100px;
+  /* Optional scroll if content overflows */
+  overflow-x: auto;
+  margin-top: 2rem; /* Add space above if needed */
+}
+
+
+/* Headings */
+.user_dashboard_box h2 {
+  color: #ff7a98;
+  margin-bottom: 1rem;
+}
+
+/* Lists */
+.user_dashboard_list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  overflow-y: auto;
+}
+
+/* List items with spacing and subtle border */
+.user_dashboard_list li {
+  padding: 0.5rem 0;
+  border-bottom: 1px dashed #eee;
+}
+
+/* Optional: scrollbar styling for overflowed boxes */
+.alumni_box::-webkit-scrollbar,
+.companies_box::-webkit-scrollbar,
+.events_box::-webkit-scrollbar {
+  width: 8px;
+}
+
+.alumni_box::-webkit-scrollbar-thumb,
+.companies_box::-webkit-scrollbar-thumb,
+.events_box::-webkit-scrollbar-thumb {
+  background-color: rgba(216, 108, 162, 0.3);
+  border-radius: 4px;
+}
+
+.user_dashboard_box a {
+  display: inline-block;
+  margin-top: 1rem;
+  color: #ff5e80;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.user_dashboard_box a:hover {
+  text-decoration: underline;
+}
+
+
+.logout-button:hover,
+.logout-button:focus {
+  background-color: #c9302c;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(201, 48, 44, 0.5);
+}
+
+/*****************************  alumni dashboard  ***********************************/
+
+:root {
+  --soft-pink: #fddde6;
+  --light-pink: #ffe9f2;
+  --lavender: #e6ccf5;
+  --deep-purple: #774c9e;
+  --text-dark: #333333;
+  --text-light: #ffffff;
+  --white: #ffffff;
+  --shadow: rgba(119, 76, 158, 0.2);
+  --border-radius: 10px;
+  --font-primary: system-ui, -apple-system, 'Segoe UI', sans-serif;
+}
+
+/* Layout */
+.alumni_dashboard_layout {
+  display: flex;
+  min-height: 100vh;
+  width: 170%;
+}
+
+/* Sidebar */
+.alumni_dashboard_sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 240px;
+  background-color: var(--soft-pink);
+  padding: 1.5rem;
+  box-shadow: 2px 0 10px var(--shadow);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.alumni_dashboard_sidebar_title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--deep-purple);
+}
+
+.alumni_dashboard_sidebar_list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.alumni_dashboard_sidebar_list li {
+  margin-bottom: 0.8rem;
+}
+
+.alumni_dashboard_sidebar_link {
+  text-decoration: none;
+  color: var(--text-dark);
+  background-color: var(--white);
+  padding: 0.6rem 1rem;
+  display: block;
+  border-radius: var(--border-radius);
+  transition: background 0.3s, transform 0.2s;
+  font-weight: 500;
+}
+
+.alumni_dashboard_sidebar_link:hover {
+  background-color: var(--lavender);
+  transform: scale(1.02);
+}
+
+.alumni_dashboard_active .alumni_dashboard_sidebar_link {
+  background-color: var(--deep-purple);
+  color: var(--text-light);
+}
+
+/* Main content */
+.alumni_dashboard_container {
+  margin-left: 240px; /* same as sidebar width */
+  flex: 1;
+  padding: 2rem;
+  background-color: var(--white);
+  overflow-y: auto;
+}
+
+/* Heading */
+.alumni_dashboard_heading {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--deep-purple);
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+/* Search Input */
+.alumni_dashboard_search_input {
+  width: 100%;
+  max-width: 300px;
+  padding: 0.5rem 0.8rem;
+  font-size: 1rem;
+  border: 1px solid var(--soft-pink);
+  border-radius: var(--border-radius);
+  margin-bottom: 1rem;
+}
+
+/* Sort Button */
+.alumni_dashboard_sort_button {
+  background-color: var(--lavender);
+  color: var(--text-dark);
+  border: none;
+  padding: 0.5rem 1.2rem;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.3s;
+  margin-left: 1rem;
+}
+
+.alumni_dashboard_sort_button:hover {
+  background-color: var(--deep-purple);
+  color: var(--text-light);
+}
+
+/* Table */
+.alumni_dashboard_table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1.5rem;
+}
+
+.alumni_dashboard_table_head {
+  background-color: var(--lavender);
+  color: var(--deep-purple);
+}
+
+.alumni_dashboard_table_row:nth-child(even) {
+  background-color: var(--light-pink);
+}
+
+.alumni_dashboard_table_row:nth-child(odd) {
+  background-color: var(--soft-pink);
+}
+
+.alumni_dashboard_table_row:hover {
+  background-color: var(--lavender);
+}
+
+.alumni_dashboard_table_header,
+.alumni_dashboard_table_cell {
+  padding: 0.8rem;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Events title */
+.alumni_dashboard_events_title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--deep-purple);
+  text-align: center;
+  margin-top: 2rem;
+}
+
+/* Scrollbar */
+.alumni_dashboard_sidebar::-webkit-scrollbar {
+  width: 5px;
+}
+
+.alumni_dashboard_sidebar::-webkit-scrollbar-thumb {
+  background-color: var(--deep-purple);
+  border-radius: 10px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .alumni_dashboard_layout {
+    flex-direction: column;
+  }
+
+  .alumni_dashboard_sidebar {
+    position: relative;
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    overflow-x: auto;
+    padding: 1rem;
+  }
+
+  .alumni_dashboard_sidebar_list {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .alumni_dashboard_container {
+    margin-left: 0;
+    padding: 1rem;
+  }
+}
+
+
+/*********************************  Company owner  ***************************************/
+
+
+
+/* Main Layout */
+.company_dashboard_layout {
+  margin-left: 250px; /* same width as the sidebar */
+  display: flex;
+  min-height: 100vh;
+  background: linear-gradient(to right, #fcefee, #f3e5f5);
+  font-family: 'Comic Neue', cursive, sans-serif;
+  color: #6a1b9a;
+  width: 105%;
+}
+
+/* Sidebar */
+.company_dashboard_sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 250px;
+  background: linear-gradient(180deg, #f8bbd0, #e1bee7);
+  padding: 2rem 1rem;
+  box-shadow: 3px 0 12px rgba(0, 0, 0, 0.1);
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+  z-index: 1000;
+}
+
+.company_dashboard_logout_button {
+  display: block;
+  background-color: #ce93d8;
+  color: #fff;
+  padding: 0.6rem;
+  margin: 0.75rem 1rem;
+  border-radius: 20px;
+  text-align: center;
+  text-decoration: none;
+  font-weight: bold;
+  border: none;
+  width: calc(100% - 2rem);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.company_dashboard_logout_button:hover {
+  background-color: #ba68c8;
+}
+
+
+.company_dashboard_sidebar_title {
+  font-size: 26px;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 2rem;
+  letter-spacing: 1px;
+}
+
+.company_dashboard_profile {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.company_dashboard_profile_initials {
+  background: #fff;
+  color: #d81b60;
+  font-size: 1.8rem;
+  font-weight: bold;
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 0.5rem auto;
+  border-radius: 50%;
+  line-height: 70px;
+  box-shadow: 0 0 10px rgba(216, 27, 96, 0.3);
+}
+
+.company_dashboard_profile_name {
+  font-size: 1rem;
+  color: #fff;
+  font-weight: bold;
+}
+
+/* Navigation */
+.company_dashboard_nav {
+  list-style: none;
+  padding: 0;
+}
+
+.company_dashboard_nav_item {
+  margin: 0.75rem 0;
+}
+
+.company_dashboard_nav_item a {
+  display: block;
+  background-color: #ce93d8;
+  color: #fff;
+  padding: 0.6rem;
+  margin: 0 1rem;
+  border-radius: 20px;
+  text-align: center;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.company_dashboard_nav_item a:hover,
+.company_dashboard_nav_item.active a {
+  background-color: #ba68c8;
+}
+
+/* Main Content */
+.company_dashboard_main {
+  flex: 1;
+  padding: 2rem;
+  background-color: #fef7fa;
+}
+
+.company_dashboard_heading {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #8e24aa;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Job Form */
+.company_dashboard_job_form {
+  background: #fce4ec;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 3px 10px rgba(173, 20, 87, 0.1);
+  margin-bottom: 2rem;
+}
+
+.company_dashboard_job_form h2 {
+  color: #ad1457;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.company_dashboard_job_form input,
+.company_dashboard_job_form textarea {
+  width: 100%;
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+  border: 2px solid #f48fb1;
+  border-radius: 16px;
+  font-size: 1rem;
+  background: #fff;
+  color: #6a1b9a;
+}
+
+.company_dashboard_job_form textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.company_dashboard_job_form button {
+  display: block;
+  margin: 0 auto;
+  background-color: #ec407a;
+  color: white;
+  padding: 0.7rem 2rem;
+  border: none;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.company_dashboard_job_form button:hover {
+  background-color: #d81b60;
+}
+
+/* Job List */
+.company_dashboard_job_list {
+  background: #f3e5f5;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 2px 10px rgba(156, 39, 176, 0.1);
+}
+
+.company_dashboard_job_list h2 {
+  color: #8e24aa;
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.company_dashboard_job_list ul {
+  list-style: none;
+  padding: 0;
+}
+
+.company_dashboard_job_list li {
+  background-color: #fce4ec;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 16px;
+  box-shadow: 0 1px 6px rgba(240, 98, 146, 0.1);
+  color: #6a1b9a;
+  transition: transform 0.2s;
+}
+
+.company_dashboard_job_list li:hover {
+  transform: scale(1.02);
+}
+
+/*************************  user list  ***********************************/
+
+/* User List Container */
+.userlist-container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.08);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Heading */
+.userlist-container h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+/* Search Input */
+.userlist-container input[type="text"] {
+  display: block;
+  margin: 0 auto 1.5rem auto;
+  padding: 0.6rem 1rem;
+  width: 60%;
+  max-width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+/* Table Styling */
+.userlist-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.userlist-table thead {
+  background-color: #3a7afe;
+  color: white;
+}
+
+.userlist-table th,
+.userlist-table td {
+  padding: 0.9rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  max-width: 200px;
+  word-break: break-word;
+  vertical-align: middle;
+}
+
+/* Fix input width on edit mode */
+.userlist-table input {
+  padding: 6px 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  width: 100%;
+  max-width: 180px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+/* Row Hover Effect */
+.userlist-table tr:hover {
+  background-color: #f9f9f9;
+}
+
+/* Buttons */
+.userlist-delete {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  margin: 4px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  white-space: nowrap;
+}
+
+.userlist-delete:hover {
+  background-color: #d32f2f;
+}
+
+.userlist-delete[style*="background: #3a7afe"] {
+  background-color: #3a7afe !important;
+}
+
+.userlist-delete[style*="background: #3a7afe"]:hover {
+  background-color: #2a5ed9 !important;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+/* Back Button */
+.userlist-container a button {
+  background-color: #555;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.userlist-container a button:hover {
+  background-color: #333;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .userlist-container input[type="text"] {
+    width: 90%;
+  }
+
+  .userlist-table thead {
+    display: none;
+  }
+
+  .userlist-table,
+  .userlist-table tbody,
+  .userlist-table tr,
+  .userlist-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .userlist-table tr {
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 10px;
+  }
+
+  .userlist-table td {
+    text-align: right;
+    padding-left: 50%;
+    position: relative;
+  }
+
+  .userlist-table td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 10px;
+    width: 45%;
+    text-align: left;
+    font-weight: bold;
+  }
+}
+
+
+/**************************** company list styles ****************************/
+.alumni-list-container {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: "Segoe UI", sans-serif;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.back-button {
+  background: #3a7afe;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  margin-bottom: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.add-company-link {
+  display: inline-block;
+  margin-bottom: 1rem;
+  background-color: #28a745;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+.alumni-list-search {
+  width: 100%;
+  padding: 0.6rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+.company-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.company-table th,
+.company-table td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #ccc;
+}
+
+.company-table th {
+  background-color: #f0f4ff;
+  font-weight: 600;
+}
+
+.company-table tr:hover {
+  background-color: #f9f9f9;
+}
+
+.company-table input {
+  width: 100%;
+  padding: 0.4rem;
+  border-radius: 4px;
+  border: 1px solid #aaa;
+}
+
+.company-table button {
+  margin-right: 5px;
+  padding: 0.4rem 0.7rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.company-table button:first-of-type {
+  background-color: #007bff;
+  color: white;
+}
+
+.company-table button:last-of-type {
+  background-color: #dc3545;
+  color: white;
+}
+
+/***************************** toastify styles *****************************/
+
+/* In OverallStyle.css */
+.Toastify__toast {
+  font-family: 'Segoe UI', sans-serif;
+  border-radius: 10px;
+  font-weight: 500;
+  padding: 12px 16px;
+  background: linear-gradient(to right, #a8edea, #fed6e3);
+  color: #333;
+}
+
+.confirm-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.confirm-box {
+  background: white;
+  padding: 20px 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  text-align: center;
+  max-width: 320px;
+  width: 90%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.confirm-box p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+.confirm-buttons {
+  display: flex;
+  justify-content: space-around;
+}
+
+.confirm-btn {
+  padding: 8px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  font-size: 1rem;
+  width: 100px;
+  transition: background-color 0.3s ease;
+}
+
+.confirm-yes {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.confirm-yes:hover {
+  background-color: #c0392b;
+}
+
+.confirm-no {
+  background-color: #95a5a6;
+  color: white;
+}
+
+.confirm-no:hover {
+  background-color: #7f8c8d;
+}
+
+.modal_overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal_content {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  width: 400px;
+  max-width: 90%;
+  position: relative;
+}
+
+.modal_close_button {
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+
+
+/*************************************  company form styles  ***************************************/
+.company-form {
+  max-width: 450px;
+  margin: 50px auto;
+  padding: 30px;
+  background: linear-gradient(to bottom right, #fce4ec, #e0c3fc);
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(160, 130, 210, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.company-input {
+  padding: 12px 16px;
+  border: 2px solid #e8c4df;
+  border-radius: 12px;
+  font-size: 16px;
+  outline: none;
+  background-color: #fffafc;
+  transition: border 0.3s;
+}
+
+.company-input:focus {
+  border-color: #d48fc2;
+  box-shadow: 0 0 5px rgba(212, 143, 194, 0.4);
+}
+
+.company-btn {
+  padding: 12px 20px;
+  background-color: #d48fc2;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.company-btn:hover {
+  background-color: #bf6fab;
+  transform: scale(1.02);
+}
+
+.cancel-btn {
+  background-color: #a39bb5;
+}
+
+.cancel-btn:hover {
+  background-color: #8b84a0;
+}
+
+.company-form-title {
+  text-align: center;
+  color: #8b3e66;
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+
+/*******************************  alumni styles ***************************************/
+/* AlumniInfo.css */
+
+.alumni_item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.alumni_photo {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-right: 15px;
+  border: 2px solid #ccc;
+}
+
+
+.alumni-container {
+  max-width: 600px;
+  margin: 30px auto;
+  background-color: #fff0f5;
+  border-radius: 20px;
+  padding: 30px 40px;
+  box-shadow: 0 8px 20px rgba(255, 182, 193, 0.3);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.alumni-container h2 {
+  text-align: center;
+  color: #c71585;
+  margin-bottom: 25px;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.alumni-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.alumni-container input,
+.alumni-container select {
+  padding: 12px 15px;
+  border-radius: 12px;
+  border: 1px solid #ffb6c1;
+  background-color: #fff;
+  font-size: 16px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.alumni-container input:focus,
+.alumni-container select:focus {
+  outline: none;
+  border-color: #db7093;
+  box-shadow: 0 0 5px rgba(219, 112, 147, 0.5);
+}
+
+.alumni-container button {
+  background-color: #db7093;
+  color: #fff;
+  padding: 12px;
+  border: none;
+  border-radius: 14px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.alumni-container button:hover {
+  background-color: #c71585;
+}
+
+/***************************** job form ************************************/
+.job-form-container {
+  max-height: 80vh; /* limit height to 80% viewport height */
+  overflow-y: auto; /* vertical scroll if needed */
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 450px;
+  background: #fff0f6; /* soft pastel pink background */
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(255, 182, 193, 0.3); /* soft pink shadow */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #6a4069; /* deep mauve text */
+  border: 1px solid #f8cdda;
+}
+
+.form-title {
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #b8396a; /* strong pink */
+}
+
+.user-info {
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  color: #a25b7c;
+}
+
+.job-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 0.4rem;
+  font-weight: 600;
+  color: #9b437a;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 0.7rem 1rem;
+  border: 2px solid #f3c6d3;
+  border-radius: 12px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+  font-family: inherit;
+  color: #6a4069;
+  background-color: #fff0f6;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #b8396a;
+  outline: none;
+  background-color: #fde7f0;
+}
+
+.submit-button {
+  background: linear-gradient(135deg, #f6a5c0, #d86ca2);
+  border: none;
+  padding: 0.9rem 1.2rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border-radius: 25px;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(216, 108, 162, 0.5);
+  transition: background 0.4s ease;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.submit-button:hover {
+  background: linear-gradient(135deg, #d86ca2, #f6a5c0);
+}
+
+
+/************************************* event styles ***************************************/
+
+.events-bg {
+  background: #fff0f6; /* soft pastel pink */
+  min-height: 100vh;
+  padding: 2rem 1rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #6a4069; /* deep mauve */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 250%;
+}
+
+.events-container {
+  background: white;
+  max-width: 800px;
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(255, 182, 193, 0.3);
+  padding: 2.5rem 2rem;
+  overflow-y: auto;
+  max-height: 100vh;
+}
+
+.events-title {
+  font-size: 2.4rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: #b8396a; /* strong pink */
+}
+
+button {
+  cursor: pointer;
+  padding: 0.7rem 1.2rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 25px;
+  transition: background 0.4s ease;
+}
+
+.events-add-btn {
+  background: linear-gradient(135deg, #f6a5c0, #d86ca2);
+  color: white;
+  margin-bottom: 1.5rem;
+  width: 100%;
+  box-shadow: 0 5px 15px rgba(216, 108, 162, 0.5);
+}
+
+.events-add-btn:hover {
+  background: linear-gradient(135deg, #d86ca2, #f6a5c0);
+}
+
+.events-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.events-input,
+.events-textarea {
+  padding: 0.9rem 1.2rem;
+  font-size: 1.1rem;
+  border: 2px solid #f3c6d3;
+  border-radius: 15px;
+  font-family: inherit;
+  color: #6a4069;
+  background-color: #fff0f6;
+  resize: vertical;
+  transition: border-color 0.3s ease;
+}
+
+.events-input:focus,
+.events-textarea:focus {
+  border-color: #b8396a;
+  outline: none;
+  background-color: #fde7f0;
+}
+
+.events-btn {
+  background: linear-gradient(135deg, #d86ca2, #f6a5c0);
+  color: white;
+  font-weight: 700;
+  padding: 0.8rem 1.5rem;
+  border-radius: 25px;
+  box-shadow: 0 6px 20px rgba(246, 165, 192, 0.6);
+  border: none;
+  transition: background 0.4s ease;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.events-btn:hover {
+  background: linear-gradient(135deg, #f6a5c0, #d86ca2);
+}
+
+.events-container > button {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: transparent;
+  color: #b8396a;
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+.events-container > button:hover {
+  text-decoration: underline;
+}
+
+/* Event List Container */
+.events-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+}
+
+/* Each Event Item */
+.events-item {
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(216, 108, 162, 0.15);
+  padding: 1.8rem 2rem;
+  transition: box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.events-item:hover {
+  box-shadow: 0 12px 30px rgba(216, 108, 162, 0.3);
+}
+
+/* Event Content Wrapper */
+.events-item-content {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header: Title + Delete Button */
+.events-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.6rem;
+}
+
+/* Title */
+.events-item-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #b8396a;
+  margin: 0;
+}
+
+/* Delete Button */
+.events-delete-btn {
+  background: transparent;
+  border: none;
+  color: #d86ca2;
+  font-size: 1.8rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  padding: 0;
+  user-select: none;
+}
+
+.events-delete-btn:hover {
+  color: #f6a5c0;
+}
+
+/* Date and Location */
+.events-item-date-location {
+  font-size: 0.95rem;
+  color: #9e6b8c;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  letter-spacing: 0.02em;
+}
+
+/* Event Image */
+.events-item-image img {
+  width: 100%;
+  max-height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  box-shadow: 0 6px 18px rgba(216, 108, 162, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.events-item-image img:hover {
+  transform: scale(1.03);
+}
+
+/* Description */
+.events-item-desc {
+  font-size: 1.1rem;
+  color: #6a4069;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+  white-space: pre-wrap;
+}
+
+/* Creator Meta */
+.events-item-meta {
+  font-size: 0.9rem;
+  color: #b8396a;
+  font-weight: 600;
+  text-align: right;
+  opacity: 0.8;
+}
+
+
+/*********************************** alumni list styles ***********************************/
+
+.alumni-list-container {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 1rem 2rem;
+  background: #f9f9fb;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.alumni-list-container h2 {
+  text-align: center;
+  color: #4a4a8e;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.alumni-list-search {
+  display: block;
+  width: 100%;
+  padding: 10px 15px;
+  margin-bottom: 1.5rem;
+  border: 1.8px solid #c5c5e8;
+  border-radius: 25px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.alumni-list-search:focus {
+  border-color: #6c63ff;
+  outline: none;
+  box-shadow: 0 0 8px #a19cffaa;
+}
+
+.alumni-list-ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.alumni-list-li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  background: white;
+  padding: 0.7rem 1rem;
+  margin-bottom: 12px;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  transition: box-shadow 0.3s ease;
+}
+
+.alumni-list-li:hover {
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.alumni-list-info {
+  flex: 1 1 60%;
+  font-size: 1rem;
+  color: #333366;
+  padding-right: 1rem;
+  min-width: 220px;
+}
+
+.alumni-list-info input {
+  width: 100%;
+  padding: 6px 10px;
+  font-size: 1rem;
+  border: 1.5px solid #b3b3f0;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.alumni-list-info input:focus {
+  border-color: #6c63ff;
+  box-shadow: 0 0 6px #aeaaff88;
+}
+
+.alumni-list-delete-btn {
+  background: #ff7f91;
+  border: none;
+  padding: 7px 14px;
+  margin-left: 8px;
+  border-radius: 20px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  min-width: 75px;
+}
+
+.alumni-list-delete-btn:hover {
+  background: #e75a6b;
+}
+
+.alumni-list-delete-btn[style*="background: #3a7afe"] {
+  background: #5a7cff;
+}
+
+.alumni-list-delete-btn[style*="background: #3a7afe"]:hover {
+  background: #2d58e0;
+}
+
+/* Back button style */
+.alumni-list-container > a > button {
+  display: flex;
+  align-items: center;
+  background-color: #f7c8da;
+  border: none;
+  padding: 8px 16px;
+  margin-bottom: 1rem;
+  border-radius: 25px;
+  font-weight: 600;
+  color: #8e3c6e;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.alumni-list-container > a > button:hover {
+  background-color: #d87fa1;
+}
+
+.alumni-list-container > a > button svg {
+  margin-right: 8px;
+  font-size: 1.3rem;
+  color: #8e3c6e;
+}
+
+/*******************************  profile  *******************************************/
+
+.profile-img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ccc;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+}
+
+.alumni-list-title {
+  font-size: 1.8rem;
+  color: #222;
+  margin-bottom: 1rem;
+}
+
+.user_dashboard_box {
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  padding: 24px;
+  max-width: 600px;
+  margin: 20px auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.user_dashboard_box h2 {
+  font-size: 1.8rem;
+  margin-bottom: 16px;
+  color: #2c3e50;
+  border-bottom: 2px solid #3498db;
+  display: inline-block;
+  padding-bottom: 4px;
+}
+
+.user_dashboard_list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.user_dashboard_list li {
+  background-color: #f9f9f9;
+  padding: 14px 18px;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.user_dashboard_list li:hover {
+  background-color: #eef6ff;
+  transform: translateY(-2px);
+}
+
+.user_dashboard_list li strong {
+  font-size: 1.1rem;
+  color: #34495e;
+}
+
+.user_dashboard_list li span {
+  display: block;
+  color: #7f8c8d;
+  font-size: 0.9rem;
+  margin-top: 4px;
+}
